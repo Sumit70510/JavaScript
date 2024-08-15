@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      h1{
+        margin:0px;
+        padding: 0px;
+       }  
+      .container
+      {
+        display :flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        /* height: 100%; */
+      }
+     
+     button
+     {
+       width: 50%;
+       height: 30px;
+       margin-left: 25%;
+     } 
+    </style>
+</head>
+<body bgcolor=darkgrey text=#12436>
+    <div class="container">
+    <h1>BMI Calculator</h1>    
+    <form>
+         <p>
+            <label> Enter Height in Cm : </label>
+             <input type="text" id="Height"/>
+         </p>
+         <p>
+            <label> Enter Weight in Kg : </label>
+             <input type="text" id="Weight"/>
+         </p>
+         <button>Calculate</button>
+         <div id="Result"></div>
+         <h3>BMI Weight Guide</h3>
+         <p>Under Weight = Less Than 18.6 </p>
+         <p>Normal Range = 18.6 and 24.9</p>
+         <p>Over Weight  = Greater Than 24.9</p>
+    </form>
+    </div> 
+</body>
+    <script>
+       const form=document.querySelector('form');
+       form.addEventListener('submit',function(e)
+        {
+           e.preventDefault();
+           const height=parseInt(document.querySelector("#Height").value); 
+           const Weight=parseInt(document.querySelector("#Weight").value); 
+           const result=document.querySelector("#Result");
+           if(isNaN(height)||height<=0||height==='')
+            {result.innerHTML="Please Enter A Valid Height ";}
+           else
+            if(isNaN(Weight)||Weight<=0||Weight==='')
+            {result.innerHTML="Please Enter A Valid Weight ";}
+            else 
+             {
+               const bmi=((Weight/((height*height)/10000)).toFixed(2));
+               result.innerHTML=`Your BMI is : ${bmi}`;
+             }
+        }    
+    );
+    </script>
+</html>

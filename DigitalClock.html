@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+         background-color:#212121;
+         /* color: antiquewhite; */
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height:100vh;
+       }
+       #clock
+        { 
+           display: flex;
+           justify-content: center;
+           height: 2rem;
+           width:  8rem;
+           align-items: center; 
+           border-radius: 5px;
+           background: goldenrod;
+        }
+       span
+        { 
+           background: white;
+           border-radius: 5px;
+            display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 2rem;
+           width:  8rem;
+       }  
+    </style>
+</head>
+<body>
+     <span>Your Clock</span> 
+     <div id="clock"></div>
+</body>
+   <script>
+       const clock=document.getElementById('clock');
+       setInterval(function() {
+         const time=new Date();
+        clock.innerHTML=time.toLocaleTimeString();
+     }, 1000);
+   </script>
+</html>
