@@ -15,17 +15,19 @@ let gamePlay=true;
 let prevGuess= [];
 let numGuess= 10;
 
- if(gamePlay&&numGuess>0)
+ if(gamePlay)
    {
      submit.addEventListener('click', function(e)
        {
          e.preventDefault();
          let guess=parseInt(userInput.value); 
-        
+        if(numGuess>0)
          validate(guess);
        }
          );
    } 
+  else
+  { endGame(0);} 
 
    
 function validate(guess)
@@ -79,11 +81,7 @@ function displayMessage(message)
 
 function newGame(win)
 {
-  if(win!==1&&numGuess>0)
-     {
-    //    game(1);
-     }
-   else
+  if(win===1||numGuess<=0)
     {  
       endGame(win);       
     }  
@@ -98,5 +96,3 @@ function endGame(win)
    {temp.innerHTML="GAME OVER";}
   lowOrHi.append(temp);
 }
-
-game(gamePlay);

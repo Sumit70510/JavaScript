@@ -15,23 +15,19 @@ form
 label{
     font-size: 2rem;
 } 
-#field{
-
-}
 p{
     text-align: center;
 }
-.result
-{
-    
-}
-.wrapper
-{
-    display :flex;
+
+.wrapper {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
     background-color: blueviolet;
-
+    padding: 20px;
+    max-width: 500px; /* Set maximum width */
+    margin: 0 auto; /* Center the box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add some shadow for better visual effect */
 }
